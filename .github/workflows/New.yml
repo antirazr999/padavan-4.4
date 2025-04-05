@@ -69,7 +69,12 @@ jobs:
           sudo apt update -qq
           sudo DEBIAN_FRONTEND=noninteractive apt install -y \
             unzip libtool-bin gperf gettext autoconf automake bison flex texinfo g++ \
-            libncurses5-dev libssl-dev python3-docutils ccache
+            libncurses5-dev libssl-dev python3-docutils ccache \
+            unzip libtool-bin curl cmake gperf gawk flex bison nano xxd \
+            fakeroot kmod cpio git python3-docutils gettext automake autopoint \
+            texinfo build-essential help2man pkg-config zlib1g-dev libgmp3-dev \
+            libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget libc-dev-bin
+          make toolchain/build
 
       - name: 配置交叉编译链
         run: |
