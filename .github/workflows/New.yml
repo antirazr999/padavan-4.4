@@ -80,9 +80,9 @@ jobs:
       - name: 配置交叉编译链
         run: |
           cd ~
-          wget -q https://github.com/hanwckf/padavan-toolchain/releases/download/2023-11-09/toolchain-mipsel-2023-11-09.zip
-          unzip -q toolchain-mipsel-*.zip -d toolchain
-          echo "PATH=$HOME/toolchain/bin:$PATH" >> $GITHUB_ENV
+       #   wget -q https://github.com/hanwckf/padavan-toolchain/releases/download/2023-11-09/toolchain-mipsel-2023-11-09.zip
+       #     unzip -q toolchain-mipsel-*.zip -d toolchain
+       #     echo "PATH=$HOME/toolchain/bin:$PATH" >> $GITHUB_ENV
 
       - name: 编译固件
         run: |
