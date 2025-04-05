@@ -75,6 +75,9 @@ jobs:
             texinfo build-essential help2man pkg-config zlib1g-dev libgmp3-dev \
             libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget libc-dev-bin
           make toolchain/build
+          cd toolchain-mipsel/toolchain-4.4.x
+          tar cJf ../mipsel-linux-uclibc-gcc10.tar.xz *
+          cp -f mipsel-linux-uclibc-gcc10.tar.xz bin/targets/
           echo "PATH=$HOME/toolchain/bin:$PATH" >> $GITHUB_ENV
 
       - name: 配置交叉编译链
@@ -88,7 +91,7 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE
           ls
-          cp -f configs/templates/${{ inputs.target }}.config .config
+          cp -f trunk/configs/templates/${{ inputs.target }}.config .config
           make -j$(nproc) all
           echo "BUILD_DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
 
