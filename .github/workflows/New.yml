@@ -87,7 +87,7 @@ jobs:
       - name: 编译固件
         run: |
           cd $GITHUB_WORKSPACE
-          cp -f configs/${{ inputs.target }}.config .config
+          cp -f configs/templates/${{ inputs.target }}.config .config
           make -j$(nproc) all
           echo "BUILD_DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
 
