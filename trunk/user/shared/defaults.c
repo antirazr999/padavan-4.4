@@ -51,9 +51,9 @@ struct nvram_pair router_defaults[] = {
 	/* LAN TCP/IP parameters */
 	{ "lan_proto_x", "1" },			/* DHCP client [static|dhcp] in AP mode */
 	{ "lan_dhcpd_x", "0" },			/* DHCP server in AP mode */
-	{ "lan_ipaddr", "192.168.100.1"  },	/* LAN IP address */
-	{ "lan_netmask", "255.255.255.0"  },/* LAN netmask */
-	{ "lan_gateway", "192.168.100.1"  },/* LAN gateway */
+	{ "lan_ipaddr", DEF_LAN_ADDR },	/* LAN IP address */
+	{ "lan_netmask", DEF_LAN_MASK },/* LAN netmask */
+	{ "lan_gateway", DEF_LAN_ADDR },/* LAN gateway */
 	{ "lan_dns_x", "1" },			/* LAN DNS [static|dhcp] */
 	{ "lan_dns1", "" },				/* LAN DNS1 */
 	{ "lan_dns2", "" },				/* LAN DNS2 */
