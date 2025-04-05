@@ -76,6 +76,11 @@ jobs:
         run: |
           sudo apt update
           sudo apt install libtool-bin gperf python3-docutils autopoint gettext ccache
+          sudo apt install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd \
+            fakeroot kmod cpio git python3-docutils gettext automake autopoint \
+            texinfo build-essential help2man pkg-config zlib1g-dev libgmp3-dev \
+            libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget libc-dev-bin
+          make toolchain/build
       - name: Start Build
         run: |
           make ${{ inputs.target }}
@@ -83,7 +88,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.target }}-${{ env.TAG_ANME }}
-          path: trunk/images/*.trx
+          path: trunk/images/
       - uses: ncipollo/release-action@v1
         if: github.event.inputs.release == 'true'
         with:
