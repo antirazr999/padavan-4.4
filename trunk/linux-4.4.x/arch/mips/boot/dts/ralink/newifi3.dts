@@ -115,12 +115,12 @@
 
 		partition@50000 {
 			label = "firmware";
-			reg = <0x50000 0x17b0000>; /* 23M */
+			reg = <0x50000 0x1bb0000>; /* 27M */
 		};
 
 		partition@1800000 {
 			label = "Storage";
-			reg = <0x1800000 0x800000>; /* 8M */
+			reg = <0x1c00000 0x400000>; /* 4M */
 		};
 
 		partition@2000000 {
