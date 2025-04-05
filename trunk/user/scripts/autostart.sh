@@ -51,21 +51,6 @@ logger -t "自动启动" "正在启动 SQM QOS..."
 /usr/lib/sqm/run.sh
 fi
 
-if [ $(nvram get adbyby_enable) = 1 ] ; then
-logger -t "自动启动" "正在启动 Adbyby plus..."
-/usr/bin/adbyby.sh start
-fi
-
-if [ $(nvram get adg_enable) = 1 ] ; then
-logger -t "自动启动" "正在启动 adguardhome..."
-/usr/bin/adguardhome.sh start
-fi
-
-if [ $(nvram get ss_enable) = 1 ] ; then
-logger -t "自动启动" "正在启动科学上网..."
-/usr/bin/shadowsocks.sh start
-fi
-
 if [ $(nvram get sdns_enable) = 1 ] ; then
    if [ -f "$smartdns_conf" ] ; then
        sed -i '/去广告/d' $smartdns_conf
@@ -77,6 +62,21 @@ if [ $(nvram get sdns_enable) = 1 ] ; then
    fi
 logger -t "自动启动" "正在启动 SmartDNS..."
 /usr/bin/smartdns.sh start
+fi
+
+if [ $(nvram get ss_enable) = 1 ] ; then
+logger -t "自动启动" "正在启动科学上网..."
+/usr/bin/shadowsocks.sh start
+fi
+
+if [ $(nvram get adbyby_enable) = 1 ] ; then
+logger -t "自动启动" "正在启动 Adbyby plus..."
+/usr/bin/adbyby.sh start
+fi
+
+if [ $(nvram get adg_enable) = 1 ] ; then
+logger -t "自动启动" "正在启动 adguardhome..."
+/usr/bin/adguardhome.sh start
 fi
 
 if [ $(nvram get aliddns_enable) = 1 ] ; then
