@@ -12,4 +12,6 @@ jellyfish.pandora.xiaomi.com
 gallery.pandora.xiaomi.com
 o2o.api.xiaomi.com
 bss.pandora.xiaomi.com
-
+cpro.baidu.com
+bd.dhsz.cn
+xqimg.imedao.com
