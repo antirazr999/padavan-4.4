@@ -321,6 +321,16 @@
 		#clock-cells = <1>;
 	};
 
+	gsw: gsw {
+			compatible = "mediatek,mt753x";
+			mt7530,direct-phy-access;
+			interrupt-parent = <&gic>;
+			interrupts = <GIC_SHARED 23 IRQ_TYPE_LEVEL_HIGH>;
+
+			#address-cells = <1>;
+			#size-cells = <0>;
+	};		
+
 	raeth: raeth@1e100000 {
 		status = "okay";
 
@@ -333,36 +343,16 @@
 
 		mediatek,ethsys = <&sysc>;
 		mediatek,switch = <&gsw>;
+	};		
 
-		gmac1-support = "rgmii-1";
-		rgmii-mode-1 = "force-1000";
-		gmac2-support = "rgmii-2";
-		rgmii-mode-2 = "force-1000";
-		gmac1_txq_num = <1>;
-		gmac1_txq_txd_num = <2048>;
-		gmac2_txq_num = <1>;
-		gmac2_txq_txd_num = <2048>;
-		num_rx_desc = <4096>;
-
-		gsw: gsw {
-			compatible = "mediatek,mt753x";
-			mt7530,direct-phy-access;
-			interrupt-parent = <&gic>;
-			interrupts = <GIC_SHARED 23 IRQ_TYPE_LEVEL_HIGH>;
-
-			#address-cells = <1>;
-			#size-cells = <0>;
-		};
-
-		hnat: hnat@1e100000 {
+	hnat: hnat@1e100000 {
 			compatible = "mediatek,mtk-hnat_v1";
 			reg = <0x1e100000 0x3000>;
-
 			resets = <&sysc 0>;
 			reset-names = "mtketh";
-		};
+			status = "disabled";
 	};
-
+	
 	sdhci: sdhci@1e130000 {
 		status = "disabled";
 
