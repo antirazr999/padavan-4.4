@@ -75,7 +75,7 @@ jobs:
       - name: Prepare environment
         run: |
           sudo apt update
-          tar -xvf /home/runner/work/padavan-4.4/padavan-4.4/trunk/user/iptables/iptables-1.8.7.tar /home/runner/work/padavan-4.4/padavan-4.4/trunk/user/iptables/
+          tar -xvf /home/runner/work/padavan-4.4/padavan-4.4/trunk/user/iptables/iptables-1.8.7.tar -C /home/runner/work/padavan-4.4/padavan-4.4/trunk/user/iptables/
           ls /home/runner/work/padavan-4.4/padavan-4.4/trunk/user/iptables/
           sudo apt install libtool-bin gperf python3-docutils autopoint gettext ccache
           sudo apt install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd \
