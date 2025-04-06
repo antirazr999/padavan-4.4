@@ -1,9 +1,11 @@
 SRC_NAME=iptables-1.8.7
-
 CFLAGS  += -ffunction-sections -fdata-sections
 LDFLAGS += -Wl,--gc-sections
 
 THISDIR = $(shell pwd)
+
+decompress:
+    tar -xvf iptables-1.8.7.tar
 
 all: config_test
 	$(MAKE) -C $(SRC_NAME)
