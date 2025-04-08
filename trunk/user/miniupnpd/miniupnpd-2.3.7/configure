@@ -27,7 +27,6 @@ fi
 for argv; do
 case "$argv" in
 	--ipv6) IPV6=1 ;;
-	--igd2) IGD2=1 ;;
 	--strict) STRICT=1 ;;
 	--debug) DEBUG=1 ;;
 	--leasefile) LEASEFILE=1 ;;
@@ -46,8 +45,7 @@ case "$argv" in
 		fi ;;
 	--disable-pppconn) DISABLEPPPCONN=1 ;;
 	--disable-fork) NO_BACKGROUND_NO_PIDFILE=1 ;;
-	--firewall=*)
-	    FW=$(echo $argv | cut -d= -f2) ;;
+	--firewall=) FW=iptables ;;
 	--libpfctl) USE_LIBPFCTL=1 ;;
 	--iptablespath=*)
 		IPTABLESPATH=$(echo $argv | cut -d= -f2) ;;
