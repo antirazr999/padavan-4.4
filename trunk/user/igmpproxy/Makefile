@@ -11,19 +11,20 @@ download_test:
 
 extract_test:
 	( if [ ! -d $(SRC_NAME) ]; then \
-		tar -xf $(SRC_NAME).tar.gz; \
+		tar -xf $(SRC_NAME).tar.gz; \		
 	fi )
 
 config_test:
-	( if [ -f ./config_done ]; then \
+	(if [ -f ./config_done ]; then \
 		echo "the same configuration"; \
 	else \
 		make configure && touch config_done; \
 	fi )
 
 configure:
-        sed -i 's#my_log( *LOG_WARNING, *errno, *"MRT_DEL_MFC" *) *#//&#g' igmpproxy-0.4/src/mroute-api.c
-	( cd $(SRC_NAME) ; \
+	( 
+	sed -i 's#my_log( *LOG_WARNING, *errno, *"MRT_DEL_MFC" *) *#//&#g' /home/runner/work/padavan-4.4/padavan-4.4/trunk/user/igmpproxy/igmpproxy-0.4/src/mroute-api.c
+	cd $(SRC_NAME) ; \
 	aclocal; autoconf; autoheader; automake --add-missing ; \
 	./configure \
 		--prefix=/ \
