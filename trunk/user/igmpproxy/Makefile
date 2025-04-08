@@ -11,7 +11,8 @@ download_test:
 
 extract_test:
 	( if [ ! -d $(SRC_NAME) ]; then \
-		tar -xf $(SRC_NAME).tar.gz; \		
+		tar -xf $(SRC_NAME).tar.gz; \
+		sed -i '/LOG_WARNING, errno, "MRT_DEL_MFC"/s/^/\/\//' $(SRC_NAME)/src/mroute-api.c; \
 	fi )
 
 config_test:
