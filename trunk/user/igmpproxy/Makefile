@@ -12,19 +12,18 @@ download_test:
 extract_test:
 	( if [ ! -d $(SRC_NAME) ]; then \
 		tar -xf $(SRC_NAME).tar.gz; \
-		sed -i 's/my_log( LOG_WARNING, errno, "MRT_DEL_MFC" );/;/g' $(SRC_NAME)/src/mroute-api.c; \
+		sed -i 's#my_log( LOG_WARNING, errno, "MRT_DEL_MFC" );#;#g' $(SRC_NAME)/src/mroute-api.c
 	fi )
 
 config_test:
-	(if [ -f ./config_done ]; then \
+	( if [ -f ./config_done ]; then \
 		echo "the same configuration"; \
 	else \
 		make configure && touch config_done; \
 	fi )
 
 configure:
-	( 
-	cd $(SRC_NAME) ; \
+	( cd $(SRC_NAME) ; \
 	aclocal; autoconf; autoheader; automake --add-missing ; \
 	./configure \
 		--prefix=/ \
