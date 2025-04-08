@@ -1753,10 +1753,12 @@ void check_servers(int no_loop_check)
 	 {
 	   count--;
 	   if (++locals <= LOCALS_LOGGED)
-	     my_syslog(LOG_INFO, _("using only locally-known addresses for %s"), serv->domain);
+	     //my_syslog(LOG_INFO, _("using only locally-known addresses for %s"), serv->domain);
+		   ;
 	 }
        else if (serv->flags & SERV_USE_RESOLV)
-	 my_syslog(LOG_INFO, _("using standard nameservers for %s"), serv->domain);
+	 //my_syslog(LOG_INFO, _("using standard nameservers for %s"), serv->domain);
+	       ;
     }
   
   if (locals > LOCALS_LOGGED)
