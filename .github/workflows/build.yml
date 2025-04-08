@@ -76,7 +76,9 @@ jobs:
         run: |
           sudo apt update
           tar -xvf /home/runner/work/padavan-4.4/padavan-4.4/trunk/user/iptables/iptables-1.8.7.tar -C /home/runner/work/padavan-4.4/padavan-4.4/trunk/user/iptables/
-          ls /home/runner/work/padavan-4.4/padavan-4.4/trunk/user/iptables/
+          tar -xvf /home/runner/work/padavan-4.4/padavan-4.4/trunk/user/igmpproxy/igmpproxy-0.4.tar.gz -C /home/runner/work/padavan-4.4/padavan-4.4/trunk/user/igmpproxy/
+          sed -i 's#my_log( *LOG_WARNING, *errno, *"MRT_DEL_MFC" *) *#//&#g' /home/runner/work/padavan-4.4/padavan-4.4/trunk/user/igmpproxy/igmpproxy-0.4/src/mroute-api.c
+          rm -rf /home/runner/work/padavan-4.4/padavan-4.4/trunk/user/igmpproxy/igmpproxy-0.4
           sudo apt install libtool-bin gperf python3-docutils autopoint gettext ccache
           sudo apt install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd \
             fakeroot kmod cpio git python3-docutils gettext automake autopoint \
