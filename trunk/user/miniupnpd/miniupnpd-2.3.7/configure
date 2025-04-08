@@ -444,7 +444,7 @@ case $OS_NAME in
 				# test the current environment to determine which to use
 				# Would be better to check for actual presence of nftable rules, but that requires root privileges
 				if [ -x "$(command -v nft)" ]; then
-					FW=nftables
+					FW=iptables
 				else
 					FW=iptables
 				fi
