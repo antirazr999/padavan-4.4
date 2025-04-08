@@ -1729,7 +1729,7 @@ void check_servers(int no_loop_check)
 	  else
 	    s1 = _("domain"), s2 = serv->domain, s4 = (serv->flags & SERV_WILDCARD) ? "*" : "";
 	  
-	  my_syslog(LOG_INFO, _("using nameserver %s#%d for %s %s%s %s"), daemon->namebuff, port, s1, s4, s2, s3);
+	  //my_syslog(LOG_INFO, _("using nameserver %s#%d for %s %s%s %s"), daemon->namebuff, port, s1, s4, s2, s3);
 	}
 #ifdef HAVE_LOOP
       else if (serv->flags & SERV_LOOP)
