@@ -12,7 +12,7 @@ download_test:
 extract_test:
 	( if [ ! -d $(SRC_NAME) ]; then \
 		tar -xf $(SRC_NAME).tar.gz; \
-		sed -i 's#my_log( LOG_WARNING, errno, "MRT_DEL_MFC" );#;#g' $(SRC_NAME)/src/mroute-api.c
+		sed -i 's/my_log( LOG_WARNING, errno, "MRT_DEL_MFC" );/;/' $(SRC_NAME)/src/mroute-api.c; \
 	fi )
 
 config_test:
