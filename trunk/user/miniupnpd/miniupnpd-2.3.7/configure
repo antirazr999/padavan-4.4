@@ -27,6 +27,7 @@ fi
 for argv; do
 case "$argv" in
 	--ipv6) IPV6=1 ;;
+	--igd2) IGD2=0 ;;
 	--strict) STRICT=1 ;;
 	--debug) DEBUG=1 ;;
 	--leasefile) LEASEFILE=1 ;;
