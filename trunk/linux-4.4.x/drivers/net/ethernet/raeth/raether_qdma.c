@@ -1419,7 +1419,7 @@ int ei_qdma_ioctl(struct net_device *dev, struct ifreq *ifr,
 		}
 
 		data->val = sys_reg_read(QTX_CFG_0 + data->off);
-		pr_info("read reg off:%x val:%x\n", data->off, data->val);
+		//pr_info("read reg off:%x val:%x\n", data->off, data->val);
 		ret = copy_to_user(ifr->ifr_data, data, sizeof(*data));
 		sys_reg_write(QDMA_PAGE, 0);
 		if (ret) {
