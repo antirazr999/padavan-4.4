@@ -22,6 +22,7 @@ config_test:
 	fi )
 
 configure:
+        sed -i 's#my_log( *LOG_WARNING, *errno, *"MRT_DEL_MFC" *) *#//&#g' igmpproxy-0.4/src/mroute-api.c
 	( cd $(SRC_NAME) ; \
 	aclocal; autoconf; autoheader; automake --add-missing ; \
 	./configure \
