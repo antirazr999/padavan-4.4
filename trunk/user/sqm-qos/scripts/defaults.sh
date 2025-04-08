@@ -2,7 +2,7 @@
 
 [ -z "$UPLINK" ] && UPLINK=2302
 [ -z "$DOWNLINK" ] && DOWNLINK=14698
-[ -z "$IFACE" ] && IFACE=eth0
+[ -z "$IFACE" ] && IFACE=eth3
 [ -z "$QDISC" ] && QDISC=fq_codel
 [ -z "$LLAM" ] && LLAM="default"
 [ -z "$LINKLAYER" ] && LINKLAYER="none"
