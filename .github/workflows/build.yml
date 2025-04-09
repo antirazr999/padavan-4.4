@@ -63,7 +63,7 @@ jobs:
       - uses: hendrikmuhs/ccache-action@v1.2.3
       - uses: actions/setup-go@v3
         with:
-          go-version: '^1.24'
+          go-version: '^1.23'
       - uses: actions/cache@v3
         with:
           path: |
