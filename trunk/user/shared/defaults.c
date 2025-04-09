@@ -583,7 +583,7 @@ struct nvram_pair router_defaults[] = {
 	{ "tunnel_forward", "8.8.4.4#53" },
 	{ "ss_cgroups", "0" },
 	{ "ss_cgoups_cpu_s", "512" },
-	{ "ss_cgoups_mem_s", "25M" },
+	{ "ss_cgoups_mem_s", "125M" },
 	{ "ss_watchcat", "0" },
 	{ "ss_turn", "0" },
 	{ "ss_turn_s", "600" },
