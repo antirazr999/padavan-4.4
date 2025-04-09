@@ -225,7 +225,7 @@ struct nvram_pair router_defaults[] = {
 	{ "wl_stream_tx", STR(BOARD_NUM_ANT_5G_TX) },
 	{ "wl_stream_rx", STR(BOARD_NUM_ANT_5G_RX) },
 	{ "wl_preamble", "1" },
-	{ "wl_greenap", "0" },				/* 5GHz GreenAP */
+	{ "wl_greenap", "1" },				/* 5GHz GreenAP */
 	{ "wl_ldpc", "3" },
 	{ "wl_HT_RDG", "0" },
 #if defined (USE_WID_5G) && (USE_WID_5G==7615 || USE_WID_5G==7915)
@@ -237,13 +237,13 @@ struct nvram_pair router_defaults[] = {
 	{ "wl_HT_AMSDU", "0" },
 	{ "wl_HT_BAWinSize", "64" },
 #endif
-	{ "wl_HT_80211KV", "0" },
-	{ "wl_HT_80211R", "0" },
+	{ "wl_HT_80211KV", "1" },
+	{ "wl_HT_80211R", "1" },
 	{ "wl_HT_MpduDensity", "5" },
 	{ "wl_HT_AutoBA", "1" },
 	{ "wl_VgaClamp", "0" },
-	{ "wl_KickStaRssiLow", "0" },
-	{ "wl_AssocReqRssiThres", "0" },
+	{ "wl_KickStaRssiLow", "-85" },
+	{ "wl_AssocReqRssiThres", "-85" },
 
 	// guest AP 5GHz
 	{ "wl_guest_enable", "0" },
@@ -332,11 +332,11 @@ struct nvram_pair router_defaults[] = {
 	{ "rt_stream_tx", STR(BOARD_NUM_ANT_2G_TX) },
 	{ "rt_stream_rx", STR(BOARD_NUM_ANT_2G_RX) },
 	{ "rt_preamble", "1" },
-	{ "rt_greenap", "0" },			/* 2.4GHz GreenAP */
+	{ "rt_greenap", "1" },			/* 2.4GHz GreenAP */
 	{ "rt_HT_RDG", "0" },
 	{ "rt_HT_AMSDU", "1" },
-	{ "rt_HT_80211KV", "0" },
-	{ "rt_HT_80211R", "0" },
+	{ "rt_HT_80211KV", "1" },
+	{ "rt_HT_80211R", "1" },
 	{ "rt_HT_MpduDensity", "5" },
 	{ "rt_band_steering", "0" },	/* band steering AP 2.4Ghz */
 #if defined (USE_WID_2G) && (USE_WID_2G==7615 || USE_WID_2G==7915)
