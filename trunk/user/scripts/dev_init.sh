@@ -146,10 +146,13 @@ echo 1 > /proc/sys/net/ipv4/tcp_syn_retries
 echo 1 > /proc/sys/net/ipv4/tcp_synack_retries
 echo 1 > /proc/sys/net/ipv4/tcp_tw_reuse
 echo 1 > /proc/sys/net/ipv4/tcp_tw_recycle
+echo 1 > /proc/sys/net/ipv4/mtu_probing
+echo 5000 > /proc/sys/net/ipv4/tw_buckets
 echo 30 > /proc/sys/net/ipv4/tcp_fin_timeout
 echo 1200 > /proc/sys/net/ipv4/tcp_keepalive_time
 echo "10000 65000" > /proc/sys/net/ipv4/ip_local_port_range
 
+ulimit -n 51200
 
 # perform start script
 if [ -x /etc/storage/start_script.sh ] ; then
