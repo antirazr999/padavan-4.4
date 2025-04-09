@@ -20,7 +20,7 @@ build_extract:
 	fi )
 
 build:
-	( sed -i "s/go 1.21.4/go 1.23.0/g" $(THISDIR)/xray-core/Xray-core-$(XRAY_VERSION)/go.mod; \
+	( sed -i "s/go 1.24/go 1.24/g" $(THISDIR)/xray-core/Xray-core-$(XRAY_VERSION)/go.mod; \
 	cd $(THISDIR)/$(XRAY_DIR); \
 	GOOS=linux GOARCH=mipsle CGO_ENABLED=0 go build -o $(THISDIR)/bin/xray -trimpath -ldflags "-s -w -buildid="; \
 	)
