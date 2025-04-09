@@ -552,7 +552,7 @@ struct nvram_pair router_defaults[] = {
 
 #if defined(APP_VLMCSD)
 	/* vlmcsd */
-	{ "vlmcsd_enable", "0" },
+	{ "vlmcsd_enable", "1" },
 #endif
 
 #if defined (APP_IPERF3)
@@ -581,10 +581,10 @@ struct nvram_pair router_defaults[] = {
 	{ "ss_chdns", "0" },
 	{ "china_dns", "223.5.5.5#53" },
 	{ "tunnel_forward", "8.8.4.4#53" },
-	{ "ss_cgroups", "0" },
+	{ "ss_cgroups", "1" },
 	{ "ss_cgoups_cpu_s", "512" },
 	{ "ss_cgoups_mem_s", "128M" },
-	{ "ss_watchcat", "0" },
+	{ "ss_watchcat", "1" },
 	{ "ss_turn", "0" },
 	{ "ss_turn_s", "600" },
 	{ "ss_turn_ss", "5" },
@@ -678,15 +678,15 @@ struct nvram_pair router_defaults[] = {
 	{ "adbyby_adb_update", "0" },
 	{ "adbyby_update", "2" },
 	{ "hosts_ad", "1" },
-	{ "adbyby_update_hour", "03" },
+	{ "adbyby_update_hour", "05" },
 	{ "adbyby_update_min", "30" },
 	{ "adbyby_ip_x", "0" },
 	{ "adbyby_rules_x", "0" },
 	{ "adbybyip_staticnum_x", "0" },
 	{ "adbybyrules_staticnum_x", "0" },
-	{ "block_ios", "0" },
+	{ "block_ios", "1" },
 	{ "block_douyin", "0" },
-	{ "anti_ad", "0" },
+	{ "anti_ad", "1" },
 	{ "anti_ad_link", "https://anti-ad.net/anti-ad-for-dnsmasq.conf" },
 	{ "anti_ad_count", "0" },
 #endif
@@ -1059,7 +1059,7 @@ struct nvram_pair router_defaults[] = {
 	{ "nf_nat_type", "1" },
 	{ "nf_nat_loop", "1" },
 #if (BOARD_RAM_SIZE > 128)
-	{ "nf_max_conn", "32768" },
+	{ "nf_max_conn", "16384" },
 #elif (BOARD_RAM_SIZE > 32)
 	{ "nf_max_conn", "16384" },
 #else
