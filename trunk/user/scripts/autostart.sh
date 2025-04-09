@@ -4,6 +4,8 @@
 #
 #nvram set ntp_ready=0
 
+ulimit -n 51200
+
 mkdir -p /tmp/dnsmasq.dom
 logger -t "防止 DNSmasq 启动失败，创建/tmp/dnsmasq.dom/"
 
