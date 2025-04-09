@@ -4,13 +4,13 @@ mount -t proc proc /proc
 mount -t sysfs sysfs /sys
 [ -d /proc/bus/usb ] && mount -t usbfs usbfs /proc/bus/usb
 
-#size_tmp="24M"
-#size_var="4M"
-#size_etc="6M"
+size_tmp="32M"
+size_var="4M"
+size_etc="12M"
 
-size_tmp="256M"
-size_var="10M"
-size_etc="32M"
+#size_tmp="256M"
+#size_var="10M"
+#size_etc="32M"
 
 if [ "$1" == "-l" ] ; then
 	size_tmp="8M"
