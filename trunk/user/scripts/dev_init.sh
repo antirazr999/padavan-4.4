@@ -48,6 +48,7 @@ mkdir -p -m 777 /tmp/hashes
 mkdir -p -m 777 /tmp/modem
 mkdir -p -m 777 /tmp/rc_notification
 mkdir -p -m 777 /tmp/rc_action_incomplete
+mkdir -p /tmp/dnsmasq.dom
 mkdir -p -m 700 /home/root
 mkdir -p -m 700 /home/root/.ssh
 mkdir -p -m 755 /etc/storage
@@ -79,6 +80,7 @@ fi
 mtd_storage.sh load
 
 touch /etc/resolv.conf
+touch /tmp/adbyby/hosts
 
 if [ -f /etc_ro/openssl.cnf ]; then
 	cp -f /etc_ro/openssl.cnf /etc/ssl
