@@ -114,22 +114,22 @@
 			};
 			partition@600000 {
 				label = "firmware";
-				reg = <0x600000 0x1400000>;
+				reg = <0x600000 0x1C00000>;
 			};
 
 			partition@1a00000 {
 				label = "Config";
-				reg = <0x1a00000 0x80000>; /* 512K */
+				reg = <0x2200000 0x80000>; /* 512K */
 			};
 
 			partition@1a80000 {
 				label = "Storage";
-				reg = <0x1a80000 0x400000>; /* 4096K */
+				reg = <0x2280000 0x800000>; /* 8192K */
 			};
 
 			partition@1e80000 {
 				label = "RWFS";
-				reg = <0x1e80000 0x6100000>;
+				reg = <0x2A80000 0x5500000>;
 			};
 
 			partition@all {
