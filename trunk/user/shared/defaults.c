@@ -575,7 +575,7 @@ struct nvram_pair router_defaults[] = {
 	{ "udp_relay_server", "nil" }, 	//nil 停用 same 与主服务相同
 	{ "ss_threads", "0" },
 	{ "ss_run_mode", "gfw" }, 	 	//gfw router all oversea
-	{ "s_dports", "0" },
+	{ "s_dports", "1" },
 	{ "lan_con", "0" },
 	{ "pdnsd_enable", "0" },
 	{ "ss_chdns", "0" },
@@ -879,7 +879,7 @@ struct nvram_pair router_defaults[] = {
 	{ "dhcp_wins_x", "" },
 	{ "redirect_all_dns", "0" },		/* Redirect all clients DNS requests */
 	{ "dhcp_filter_aaaa", "0" },
-	{ "dhcp_all_servers", "0" },
+	{ "dhcp_all_servers", "1" },
 	{ "dhcp_strict_order", "0" },
 	{ "dhcp_stop_dns_rebind", "0" },
 	{ "dhcp_proxy_dnssec", "0" },
