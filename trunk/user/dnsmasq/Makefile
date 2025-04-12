@@ -23,7 +23,8 @@ download_test:
 
 extract_test:
 	( if [ ! -d $(SRC_NAME) ]; then \
-		tar xJf $(SRC_NAME).tar.xz; \
+		tar xJf dnsmasq-2.91.tar.xz; \
+		rm -rf dnsmasq-2.90 && mv dnsmasq-2.91 dnsmasq-2.90; \
 		find $(THISDIR)/patches -type f -name '*.patch' -print0 \
 		  | sort -z \
 		  | xargs -t -0 -n 1 patch -d $(SRC_NAME)  -p1 -i; \
