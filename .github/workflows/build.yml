@@ -76,7 +76,6 @@ jobs:
         run: |
           sudo apt update
           tar -xvf /home/runner/work/padavan-4.4/padavan-4.4/trunk/user/iptables/iptables-1.8.7.tar -C /home/runner/work/padavan-4.4/padavan-4.4/trunk/user/iptables/
-          tar -xzvf /home/runner/work/padavan-4.4/padavan-4.4/trunk/user/dnsmasq/dnsmasq-2.91.tar.xz -C /home/runner/work/padavan-4.4/padavan-4.4/trunk/user/dnsmasq/
           sudo apt install libnftnl-dev libtool-bin gperf python3-docutils autopoint gettext ccache
           sudo apt install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd \
             fakeroot kmod cpio git python3-docutils gettext automake autopoint \
