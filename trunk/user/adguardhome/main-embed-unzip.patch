@@ -1,4 +1,4 @@
-diff --git a/AdGuardHome-0.107.34/main.go b/AdGuardHome-0.107.34/main.go
+diff --git a/AdGuardHome-0.107.48/main.go b/AdGuardHome-0.107.48/main.go
 index e248ee9..a2c0639 100644
 --- a/main.go
 +++ b/main.go
