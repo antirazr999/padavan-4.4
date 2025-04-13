@@ -99,14 +99,10 @@ void
 sys_reboot(void)
 {
 #ifdef MTD_FLASH_32M_REBOOT_BUG
-	system("/bin/mtd_write -r unlock mtd1");
-	kill(1, SIGTERM);
 	doSystem("/sbin/mtd_storage.sh %s", "save");
-	system("/bin/mtd_write -r unlock mtd1");
-	kill(1, SIGTERM);
+	system("/bin/mtd_write -r unlock Config");
 #else
 	kill(1, SIGTERM);
-	system("/bin/mtd_write -r unlock mtd1");
 #endif
 }
 
