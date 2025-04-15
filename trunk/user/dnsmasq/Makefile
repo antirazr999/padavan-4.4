@@ -1,4 +1,4 @@
-SRC_NAME=dnsmasq-2.90
+SRC_NAME=dnsmasq-2.91
 SRC_URL=https://thekelleys.org.uk/dnsmasq/$(SRC_NAME).tar.xz
 THISDIR = $(shell pwd)
 
@@ -24,9 +24,9 @@ download_test:
 extract_test:
 	( if [ ! -d $(SRC_NAME) ]; then \
 		tar xJf $(SRC_NAME).tar.xz; \
-		find $(THISDIR)/patches -type f -name '*.patch' -print0 \
-		  | sort -z \
-		  | xargs -t -0 -n 1 patch -d $(SRC_NAME)  -p1 -i; \
+#		find $(THISDIR)/patches -type f -name '*.patch' -print0 \
+#		  | sort -z \
+#		  | xargs -t -0 -n 1 patch -d $(SRC_NAME)  -p1 -i; \
 	fi )
 
 clean:
