@@ -234,7 +234,7 @@ struct nvram_pair router_defaults[] = {
 	{ "wl_mumimo", "1" },
 	{ "wl_band_steering", "0" },		/* band steering AP 5Ghz */
 #else
-	{ "wl_HT_AMSDU", "0" },
+	{ "wl_HT_AMSDU", "1" },
 	{ "wl_HT_BAWinSize", "64" },
 #endif
 	{ "wl_HT_80211KV", "1" },
@@ -350,8 +350,8 @@ struct nvram_pair router_defaults[] = {
 #endif
 	{ "rt_HT_AutoBA", "1" },
 	{ "rt_VgaClamp", "0" },
-	{ "rt_KickStaRssiLow", "0" },
-	{ "rt_AssocReqRssiThres", "0" },
+	{ "rt_KickStaRssiLow", "-85" },
+	{ "rt_AssocReqRssiThres", "-85" },
 
 	// guest AP 2.4GHz
 	{ "rt_guest_enable", "0" },
