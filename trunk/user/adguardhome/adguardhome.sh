@@ -65,9 +65,8 @@ bind_host: 0.0.0.0
 bind_port: 3030
 language: zh-cn
 beta_bind_port: 0
-users:
-- name: root
-  password: 
+auth_name: adguardhome
+auth_pass: adguardhome
 auth_attempts: 500
 block_auth_min: 1
 http_proxy: ""
@@ -159,27 +158,27 @@ filters:
 - enabled: false
   url: https://www.malwaredomainlist.com/hostslist/hosts.txt
   name: MalwareDomainList.com Hosts List
-  id: 4
+  id: 3
 - enabled: true
   url: https://easylist-downloads.adblockplus.org/easylistchina.txt
   name: EasyList-CN
-  id: 1636299944
+  id: 4
 - enabled: true
   url: https://easylist-downloads.adblockplus.org/easyprivacy.txt
   name: EasyList-Privacy
-  id: 1636299945
+  id: 5
 - enabled: true
   url: https://www.i-dont-care-about-cookies.eu/abp/
   name: cookies
-  id: 1636299946
+  id: 6
 - enabled: true
   url: https://gitee.com/xinggsf/Adblock-Rule/raw/master/rule.txt
   name: 乘风-广告规则
-  id: 1636299947
+  id: 7
 - enabled: true
   url: https://gitee.com/xinggsf/Adblock-Rule/raw/master/mv.txt
   name: 乘风-视频规则
-  id: 1636299948
+  id: 8
 whitelist_filters: []
 user_rules:
 - '||funshion.com^'
