@@ -134,7 +134,7 @@ start_adg(){
 	change_dns
 	set_iptable
 	logger -t "AdGuardHome" "启动 AdGuardHome"
-	eval "AdGuardHome -c $adg_file -w /tmp/AdGuardHome --no-check --no-auth -v" &
+	eval "AdGuardHome -c $adg_file -w /tmp/AdGuardHome -v" &
 }
 
 stop_adg(){
