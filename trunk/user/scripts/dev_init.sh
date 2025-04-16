@@ -153,15 +153,6 @@ echo 30 > /proc/sys/net/ipv4/tcp_fin_timeout
 echo 1200 > /proc/sys/net/ipv4/tcp_keepalive_time
 echo "10000 65000" > /proc/sys/net/ipv4/ip_local_port_range
 
-ulimit -n 51200
-
-sed -i "/^FtR0khId1/d; \$aFtR0khId1=$(cat /sys/class/net/rai0/address | tr -d ':')" /etc/Wireless/iNIC/iNIC_ap.dat
-sed -i '/^FtMdId1/d; $a\FtMdId1=bbbb' /etc/Wireless/iNIC/iNIC_ap.dat
-
-sed -i "/^FtR0khId1/d; \$aFtR0khId1=$(cat /sys/class/net/ra0/address | tr -d ':')" /etc/Wireless/RT2860/RT2860AP.dat
-sed -i '/^FtMdId1/d; $a\FtMdId1=aaaa' /etc/Wireless/RT2860/RT2860AP.dat
-
-
 # perform start script
 if [ -x /etc/storage/start_script.sh ] ; then
 	/etc/storage/start_script.sh
