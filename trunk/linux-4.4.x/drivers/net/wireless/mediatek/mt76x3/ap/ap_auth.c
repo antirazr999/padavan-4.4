@@ -290,8 +290,9 @@ static VOID APPeerDeauthReqAction(
 				return;
 			}
 			else
-				DBGPRINT(RT_DEBUG_INFO,("da match,0x%02x%02x%02x%02x%02x%02x\n", 
-				*tmp, *(tmp+1), *(tmp+2), *(tmp+3), *(tmp+4), *(tmp+5)));
+				/* DBGPRINT(RT_DEBUG_INFO,("da match,0x%02x%02x%02x%02x%02x%02x\n", 
+				*tmp, *(tmp+1), *(tmp+2), *(tmp+3), *(tmp+4), *(tmp+5))); */
+				;
 		}
 #ifdef DOT1X_SUPPORT    
 		/* Notify 802.1x daemon to clear this sta info */
