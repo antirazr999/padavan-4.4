@@ -2066,8 +2066,8 @@ VOID RTMP_TimerListRelease(RTMP_ADAPTER *pAd, VOID *pRsc)
 
 	if (pListEntry) {
 		delEntryList(pRscList, pListEntry);
-		/* free a timer record entry */
-		MTWF_LOG(DBG_CAT_INIT, DBG_SUBCAT_ALL, DBG_LVL_INFO, ("%s: release timer obj %lx!\n", __func__, (ULONG)pRsc));
+		/* free a timer record entry 
+		MTWF_LOG(DBG_CAT_INIT, DBG_SUBCAT_ALL, DBG_LVL_INFO, ("%s: release timer obj %lx!\n", __func__, (ULONG)pRsc));*/
 		os_free_mem(pObj);
 	}
 }
