@@ -65,6 +65,7 @@ bind_host: 0.0.0.0
 bind_port: 3030
 auth_name: adguardhome
 auth_pass: adguardhome
+session_ttl: 1h
 language: zh-cn
 rlimit_nofile: 0
 dns:
