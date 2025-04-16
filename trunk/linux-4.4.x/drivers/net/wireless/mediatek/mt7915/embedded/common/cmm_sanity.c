@@ -210,8 +210,9 @@ BOOLEAN PeerAddBAReqActionSanity(
 		return FALSE;
 	}
 
-	MTWF_LOG(DBG_CAT_PROTO, CATPROTO_BA, DBG_LVL_TRACE, ("ADDBA Request: Start Seq = %08x, wsize = %d, TID = %d, AMSDU = %x\n",
+	/*MTWF_LOG(DBG_CAT_PROTO, CATPROTO_BA, DBG_LVL_TRACE, ("ADDBA Request: Start Seq = %08x, wsize = %d, TID = %d, AMSDU = %x\n",
 		pAddFrame->BaStartSeq.field.StartSeq, pAddFrame->BaParm.BufSize, pAddFrame->BaParm.TID, pAddFrame->BaParm.AMSDUSupported));
+	*/
 
 	return TRUE;
 }
