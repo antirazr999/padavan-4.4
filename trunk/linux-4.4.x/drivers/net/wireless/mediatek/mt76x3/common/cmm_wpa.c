@@ -2647,11 +2647,13 @@ VOID PeerPairMsg4Action(
 		/* update STA bssid & security info to daemon */
 		MboIndicateStaBssidInfo(pAd, &pAd->ApCfg.MBSSID[pEntry->func_tb_idx].wdev, pEntry->Addr);
 #endif/* MBO_SUPPORT */
-	        DBGPRINT(RT_DEBUG_TRACE, ("AP SETKEYS DONE - WPA2, AuthMode(%d)=%s, WepStatus(%d)=%s, GroupWepStatus(%d)=%s\n\n",
+	       /* DBGPRINT(RT_DEBUG_TRACE, ("AP SETKEYS DONE - WPA2, AuthMode(%d)=%s, WepStatus(%d)=%s, GroupWepStatus(%d)=%s\n\n",
 									pEntry->AuthMode, GetAuthMode(pEntry->AuthMode),
 									pEntry->WepStatus, GetEncryptType(pEntry->WepStatus),
 									group_cipher,
-									GetEncryptType(group_cipher)));
+									GetEncryptType(group_cipher))); 
+	 */
+			;
 		}
 		else
 		{
@@ -3239,20 +3241,25 @@ VOID PeerGroupMsg2Action(
 			/* send wireless event - for set key done WPA2*/
 				RTMPSendWirelessEvent(pAd, IW_SET_KEY_DONE_WPA2_EVENT_FLAG, pEntry->Addr, pEntry->wdev->wdev_idx, 0);
 
-			DBGPRINT(RT_DEBUG_TRACE, ("AP SETKEYS DONE - WPA2, AuthMode(%d)=%s, WepStatus(%d)=%s, GroupWepStatus(%d)=%s\n\n",
+			/* 
+   			DBGPRINT(RT_DEBUG_TRACE, ("AP SETKEYS DONE - WPA2, AuthMode(%d)=%s, WepStatus(%d)=%s, GroupWepStatus(%d)=%s\n\n",
 										pEntry->AuthMode, GetAuthMode(pEntry->AuthMode),
 										pEntry->WepStatus, GetEncryptType(pEntry->WepStatus),
 										group_cipher, GetEncryptType(group_cipher)));
+			 */
+			;
 		}
 		else
 		{
 			/* send wireless event - for set key done WPA*/
 				RTMPSendWirelessEvent(pAd, IW_SET_KEY_DONE_WPA1_EVENT_FLAG, pEntry->Addr, pEntry->wdev->wdev_idx, 0);
-
+		/* 
         	DBGPRINT(RT_DEBUG_TRACE, ("AP SETKEYS DONE - WPA1, AuthMode(%d)=%s, WepStatus(%d)=%s, GroupWepStatus(%d)=%s\n\n",
 										pEntry->AuthMode, GetAuthMode(pEntry->AuthMode),
 										pEntry->WepStatus, GetEncryptType(pEntry->WepStatus),
 										group_cipher, GetEncryptType(group_cipher)));
+	  	*/
+		;
 		}
     }while(FALSE);
 }
