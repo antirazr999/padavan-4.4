@@ -1629,7 +1629,7 @@ void check_servers(int no_loop_check)
 	  break;
       if (iface)
 	{
-	  my_syslog(LOG_WARNING, _("ignoring nameserver %s - local interface"), daemon->namebuff);
+	  /* my_syslog(LOG_WARNING, _("ignoring nameserver %s - local interface"), daemon->namebuff); */
 	  serv->flags |= SERV_MARK;
 	  continue;
 	}
@@ -1639,9 +1639,9 @@ void check_servers(int no_loop_check)
 	  !(serv->sfd = allocate_sfd(&serv->source_addr, serv->interface, serv->ifindex)) &&
 	  errno != 0)
 	{
-	  my_syslog(LOG_WARNING, 
+	  /* my_syslog(LOG_WARNING, 
 		    _("ignoring nameserver %s - cannot make/bind socket: %s"),
-		    daemon->namebuff, strerror(errno));
+		    daemon->namebuff, strerror(errno)); */
 	  serv->flags |= SERV_MARK;
 	  continue;
 	}
@@ -1650,7 +1650,8 @@ void check_servers(int no_loop_check)
 	serv->sfd->used = 1;
       
       if (count == SERVERS_LOGGED)
-	my_syslog(LOG_INFO, _("more servers are defined but not logged"));
+	   ;   
+	/* my_syslog(LOG_INFO, _("more servers are defined but not logged")); */
       
       if (++count > SERVERS_LOGGED)
 	continue;
@@ -1670,16 +1671,19 @@ void check_servers(int no_loop_check)
 	  else
 	    s1 = _("domain"), s2 = serv->domain, s4 = (serv->flags & SERV_WILDCARD) ? "*" : "";
 	  
-	  my_syslog(LOG_INFO, _("using nameserver %s#%d for %s %s%s %s"), daemon->namebuff, port, s1, s4, s2, s3);
+	  /* my_syslog(LOG_INFO, _("using nameserver %s#%d for %s %s%s %s"), daemon->namebuff, port, s1, s4, s2, s3);*/
 	}
 #ifdef HAVE_LOOP
       else if (serv->flags & SERV_LOOP)
-	my_syslog(LOG_INFO, _("NOT using nameserver %s#%d - query loop detected"), daemon->namebuff, port); 
+	      ;
+	/* my_syslog(LOG_INFO, _("NOT using nameserver %s#%d - query loop detected"), daemon->namebuff, port); */
 #endif
       else if (serv->interface[0] != 0)
-	my_syslog(LOG_INFO, _("using nameserver %s#%d(via %s)"), daemon->namebuff, port, serv->interface); 
+	      ;
+	/* my_syslog(LOG_INFO, _("using nameserver %s#%d(via %s)"), daemon->namebuff, port, serv->interface); */
       else
-	my_syslog(LOG_INFO, _("using nameserver %s#%d"), daemon->namebuff, port); 
+	    ;
+	/* my_syslog(LOG_INFO, _("using nameserver %s#%d"), daemon->namebuff, port); */
 
     }
   
@@ -1694,16 +1698,20 @@ void check_servers(int no_loop_check)
 	 {
 	   count--;
 	   if (++locals <= LOCALS_LOGGED)
-	     my_syslog(LOG_INFO, _("using only locally-known addresses for %s"), serv->domain);
+		;   
+	    /* my_syslog(LOG_INFO, _("using only locally-known addresses for %s"), serv->domain);*/
 	 }
        else if (serv->flags & SERV_USE_RESOLV)
-	 my_syslog(LOG_INFO, _("using standard nameservers for %s"), serv->domain);
+	       ;
+	 /* my_syslog(LOG_INFO, _("using standard nameservers for %s"), serv->domain);*/
     }
   
   if (locals > LOCALS_LOGGED)
-    my_syslog(LOG_INFO, _("using %d more local addresses"), locals - LOCALS_LOGGED);
+	  ;
+     /* my_syslog(LOG_INFO, _("using %d more local addresses"), locals - LOCALS_LOGGED);*/
   if (count - 1 > SERVERS_LOGGED)
-    my_syslog(LOG_INFO, _("using %d more nameservers"), count - SERVERS_LOGGED - 1);
+	  ;
+     /* my_syslog(LOG_INFO, _("using %d more nameservers"), count - SERVERS_LOGGED - 1);*/
 
   /* Remove unused sfds */
   for (sfd = daemon->sfds, up = &daemon->sfds; sfd; sfd = tmp)
