@@ -251,13 +251,13 @@ static USHORT update_associated_mac_entry(
 					(ie_list->vht_op_len == 0) ? NULL :  &ie_list->vht_op);
 			dot11_vht_mcs_to_internal_mcs(pAd, wdev, &ie_list->vht_cap, &pEntry->MaxHTPhyMode);
 
-			MTWF_LOG(DBG_CAT_AP, DBG_SUBCAT_ALL, DBG_LVL_INFO,
+			/* MTWF_LOG(DBG_CAT_AP, DBG_SUBCAT_ALL, DBG_LVL_INFO,
 					 ("%s(): Peer's PhyCap=>Mode:%s, BW:%s, NSS:%d, MCS:%d\n",
 					  __func__,
 					  get_phymode_str(pEntry->MaxHTPhyMode.field.MODE),
 					  get_bw_str(pEntry->MaxHTPhyMode.field.BW),
 					  ((pEntry->MaxHTPhyMode.field.MCS & (0x3 << 4)) >> 4) + 1,
-					  (pEntry->MaxHTPhyMode.field.MCS & 0xf)));
+					  (pEntry->MaxHTPhyMode.field.MCS & 0xf))); */
 
 			set_vht_cap(pAd, pEntry, &ie_list->vht_cap);
 			NdisMoveMemory(&pEntry->vht_cap_ie, &ie_list->vht_cap, sizeof(VHT_CAP_IE));
