@@ -278,7 +278,7 @@ struct nvram_pair router_defaults[] = {
 #if defined(BOARD_HAS_2G_11AX) && BOARD_HAS_2G_11AX
 	{ "rt_gmode", "6" },			/* b/g/n/ax mixed */
 #else
-	{ "rt_gmode", "5" },			/* g/n mixed */
+	{ "rt_gmode", "3" },			/* n only */
 #endif
 	{ "rt_mcs_mode", "0" },
 	{ "rt_channel", "0" },			/* Channel number */
