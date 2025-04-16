@@ -63,11 +63,9 @@ getconfig(){
 	  cat > "$adg_file" <<-\EEE
 bind_host: 0.0.0.0
 bind_port: 3030
-language: zh-cn
 auth_name: adguardhome
 auth_pass: adguardhome
-auth_attempts: 500
-block_auth_min: 1
+language: zh-cn
 rlimit_nofile: 0
 dns:
   bind_host: 0.0.0.0
@@ -104,33 +102,14 @@ tls:
 filters:
 - enabled: true
   url: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
-  name: AdGuard DNS filter
+  name: AdGuard Simplified Domain Names filter
   id: 1
 - enabled: true
   url: https://adaway.org/hosts.txt
-  name: AdAway Default Blocklist
+  name: AdAway
   id: 2
-- enabled: false
-  url: https://www.malwaredomainlist.com/hostslist/hosts.txt
-  name: MalwareDomainList.com Hosts List
-  id: 3
-- enabled: true
-  url: https://easylist-downloads.adblockplus.org/easylistchina.txt
-  name: EasyList-CN
-  id: 4
-- enabled: true
-  url: https://easylist-downloads.adblockplus.org/easyprivacy.txt
-  name: EasyList-Privacy
-  id: 5
-- enabled: false
-  url: https://www.i-dont-care-about-cookies.eu/abp/
-  name: cookies
-  id: 6
 user_rules: []
 dhcp:
-  enabled: false
-  interface_name: ""
-  dhcpv4:
   enabled: false
   interface_name: ""
   gateway_ip: ""
@@ -140,7 +119,7 @@ dhcp:
   lease_duration: 86400
   icmp_timeout_msec: 1000
 log_file: ""
-verbose: true
+verbose: false
 schema_version: 3
 
 EEE
