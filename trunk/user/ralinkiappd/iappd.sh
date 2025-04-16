@@ -7,7 +7,12 @@ start() {
 	    sed -i "/^FtR0khId1/d; \$aFtR0khId1=$(cat /sys/class/net/ra0/address | tr -d ':')" /etc/Wireless/RT2860/RT2860AP.dat
 	    sed -i '/^FtMdId1/d; $a\FtMdId1=aaaa' /etc/Wireless/RT2860/RT2860AP.dat
      
-	    sysctl -wq net.ipv4.neigh.br0.base_reachable_time_ms=10000
+
+     
+     	    ralinkiappd -wi ra0 -d 0 &
+     	    ralinkiappd -wi rai0 -d 0 &
+	  
+     	    sysctl -wq net.ipv4.neigh.br0.base_reachable_time_ms=10000
 	    sysctl -wq net.ipv4.neigh.br0.delay_first_probe_time=1
 	    sysctl -wq net.ipv4.neigh.eth2.base_reachable_time_ms=10000
 	    sysctl -wq net.ipv4.neigh.eth2.delay_first_probe_time=1
@@ -15,11 +20,6 @@ start() {
 	    sysctl -wq net.ipv4.neigh.ra0.delay_first_probe_time=1
 	    sysctl -wq net.ipv4.neigh.rai0.base_reachable_time_ms=10000
 	    sysctl -wq net.ipv4.neigh.rai0.delay_first_probe_time=1
-     	    sysctl -wq net.ipv4.neigh.rax0.base_reachable_time_ms=10000
-	    sysctl -wq net.ipv4.neigh.rax0.delay_first_probe_time=1	
-     
-     	    ralinkiappd -wi ra0 -d 0 &
-     	    ralinkiappd -wi rai0 -d 0 &
 	  
 	    if grep 'mt76x3_ap' /proc/modules ; then
 	    sysctl -wq net.ipv4.neigh.ra0.base_reachable_time_ms=10000
