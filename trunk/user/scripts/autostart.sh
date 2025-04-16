@@ -43,6 +43,8 @@ do
 	fi
 done
 
+/usr/bin/iappd.sh restart
+
 if [ $(nvram get pppoemwan_enable) = 1 ] ; then
 sleep 20
 fi
