@@ -452,12 +452,12 @@ MAC_TABLE_ENTRY *MacTableInsertWDSEntry(
 				vht_mode_adjust(pAd, pEntry, &vht_cap, NULL);
 				dot11_vht_mcs_to_internal_mcs(pAd, wdev, &vht_cap, &pEntry->MaxHTPhyMode);
 				set_vht_cap(pAd, pEntry, &vht_cap);
-				MTWF_LOG(DBG_CAT_AP, CATAP_WDS, DBG_LVL_OFF, ("%s(): Peer's PhyCap=>Mode:%s, BW:%s, MCS: 0x%x (Word = 0x%x)\n",
+				 /*MTWF_LOG(DBG_CAT_AP, CATAP_WDS, DBG_LVL_OFF, ("%s(): Peer's PhyCap=>Mode:%s, BW:%s, MCS: 0x%x (Word = 0x%x)\n",
 							__func__,
 							get_phymode_str(pEntry->MaxHTPhyMode.field.MODE),
 							get_bw_str(pEntry->MaxHTPhyMode.field.BW),
 							pEntry->MaxHTPhyMode.field.MCS,
-							pEntry->MaxHTPhyMode.word));
+							pEntry->MaxHTPhyMode.word)); */
 				NdisMoveMemory(&pEntry->vht_cap_ie, &vht_cap, sizeof(VHT_CAP_IE));
 				has_vht_cap = TRUE;
 				assoc_vht_info_debugshow(pAd, pEntry, &vht_cap, NULL);
