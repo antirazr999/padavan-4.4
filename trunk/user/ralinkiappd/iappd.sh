@@ -15,20 +15,22 @@ start() {
 	    sysctl -wq net.ipv4.neigh.ra0.delay_first_probe_time=1
 	    sysctl -wq net.ipv4.neigh.rai0.base_reachable_time_ms=10000
 	    sysctl -wq net.ipv4.neigh.rai0.delay_first_probe_time=1
+     	    sysctl -wq net.ipv4.neigh.rax0.base_reachable_time_ms=10000
+	    sysctl -wq net.ipv4.neigh.rax0.delay_first_probe_time=1	
      
-	    if grep -q 'mt76x3_ap' /proc/modules ; then
-	    ralinkiappd -wi ra0 -d 0          &
+     	    ralinkiappd -wi ra0 -d 0 &
+     	    ralinkiappd -wi rai0 -d 0 &
+	  
+	    if grep 'mt76x3_ap' /proc/modules ; then
 	    sysctl -wq net.ipv4.neigh.ra0.base_reachable_time_ms=10000
 	    sysctl -wq net.ipv4.neigh.ra0.delay_first_probe_time=1
             else
-	    if grep -q 'rai0' /proc/interrupts; then
-	    ralinkiappd -wi rai0 -d 0   &
+	    if grep 'rai0' /proc/interrupts ; then
 	    sysctl -wq net.ipv4.neigh.rai0.base_reachable_time_ms=10000
 	    sysctl -wq net.ipv4.neigh.rai0.delay_first_probe_time=1
 	    else
-	    ralinkiappd -wi ra0 -d 0   &
-	    sysctl -wq net.ipv4.neigh.rax0.base_reachable_time_ms=10000
-	    sysctl -wq net.ipv4.neigh.rax0.delay_first_probe_time=1	    
+	    sysctl -wq net.ipv4.neigh.ra0.base_reachable_time_ms=10000
+	    sysctl -wq net.ipv4.neigh.ra0.delay_first_probe_time=1	    
 	    fi
 	    fi
      
