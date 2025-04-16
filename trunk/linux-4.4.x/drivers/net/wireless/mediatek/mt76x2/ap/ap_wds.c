@@ -310,10 +310,10 @@ MAC_TABLE_ENTRY *MacTableInsertWDSEntry(
 			}
 
 
-			DBGPRINT(RT_DEBUG_OFF, ("%s(): Peer's PhyCap=>Mode:%s, BW:%s\n", 
+			/* DBGPRINT(RT_DEBUG_OFF, ("%s(): Peer's PhyCap=>Mode:%s, BW:%s\n", 
 				__FUNCTION__,
 				get_phymode_str(pEntry->MaxHTPhyMode.field.MODE),
-				get_bw_str(pEntry->MaxHTPhyMode.field.BW)));
+				get_bw_str(pEntry->MaxHTPhyMode.field.BW))); */
 
 			if (pAd->CommonCfg.vht_ldpc && (pAd->chipCap.phy_caps & fPHY_CAP_LDPC)) {
 				if (vht_cap_info->rx_ldpc)
