@@ -934,7 +934,7 @@ void ba_flush_reordering_timeout_mpdus(PRTMP_ADAPTER pAd,
 		}
 
 		tr_cnt->ba_flush_one++;
-		MTWF_LOG(DBG_CAT_PROTO, CATPROTO_BA, DBG_LVL_INFO, ("%x, flush one!\n", pBAEntry->LastIndSeq));
+		/* MTWF_LOG(DBG_CAT_PROTO, CATPROTO_BA, DBG_LVL_INFO, ("%x, flush one!\n", pBAEntry->LastIndSeq));*/
 	}
 
 }
