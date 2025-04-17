@@ -113,4 +113,5 @@ logger -t "自动启动" "正在启动frp client..."
 /usr/bin/frp.sh start
 fi
 
+logger -t "自动启动" "正在启动 miniupnp..."
 killall miniupnpd && miniupnpd -f /etc/miniupnpd.conf
