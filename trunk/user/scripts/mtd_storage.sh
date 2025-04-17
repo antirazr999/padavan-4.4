@@ -275,6 +275,11 @@ sync && echo 3 > /proc/sys/vm/drop_caches
 #iwpriv rai0 set KickStaRssiLow=-85
 #iwpriv rai0 set AssocReqRssiThres=-80
 
+sed -i "/^FtR0khId1/d; \$aFtR0khId1=$(cat /sys/class/net/rai0/address | tr -d ':')" /etc/Wireless/iNIC/iNIC_ap.dat
+sed -i '/^FtMdId1/d; $a\FtMdId1=bbbb' /etc/Wireless/iNIC/iNIC_ap.dat
+sed -i "/^FtR0khId1/d; \$aFtR0khId1=$(cat /sys/class/net/ra0/address | tr -d ':')" /etc/Wireless/RT2860/RT2860AP.dat
+sed -i '/^FtMdId1/d; $a\FtMdId1=aaaa' /etc/Wireless/RT2860/RT2860AP.dat
+
 ### Mount SATA disk
 #mdev -s
 
