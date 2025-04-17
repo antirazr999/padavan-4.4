@@ -679,12 +679,10 @@ gen_ralink_config(int is_soc_ap, int is_aband, int disable_autoscan)
 		}
 	}
 	fprintf(fp, "Channel=%d\n", i_channel);
-
 	fprintf(fp, "AutoProvisionEn=%d\n", 0);
 	fprintf(fp, "CalCacheApply=%d\n", 0);
 	fprintf(fp, "LoadCodeMethod=%d\n", 0);
 	fprintf(fp, "VHT_Sec80_Channel=%d\n", 0);
-	fprintf(fp, "WNMEnable=1\n");
 	fprintf(fp, "SKUenable=%d\n", 0);
 	fprintf(fp, "PowerUpenable=%d\n", 0);
 	fprintf(fp, "VOW_Airtime_Fairness_En=%d\n", 0);
@@ -706,11 +704,7 @@ gen_ralink_config(int is_soc_ap, int is_aband, int disable_autoscan)
 	fprintf(fp, "DfsDedicatedZeroWait=%d\n", 0);
 	fprintf(fp, "DfsZeroWaitDefault=%d\n", 0);
 	fprintf(fp, "KernelRps=%d\n", 0);
-	fprintf(fp, "RRMEnable=%d\n", 1);
 	fprintf(fp, "MboSupport=%d\n", 0);
-	fprintf(fp, "FtSupport=%d\n", 1);
-	fprintf(fp, "FtOtd=%d\n", 0);
-	fprintf(fp, "FtRic=%d\n", 1);
 
 #if defined (USE_MT7615_AP) || defined (USE_MT7915_AP)
 	fprintf(fp, "VOW_RX_En=%d\n", 1);
@@ -1310,20 +1304,18 @@ gen_ralink_config(int is_soc_ap, int is_aband, int disable_autoscan)
 	//802.11KVR
 	i_val = nvram_wlan_get_int(is_aband, "HT_80211KV");
 	fprintf(fp, "RRMEnable=%d;%d\n", i_val,i_val);
-	fprintf(fp, "WNMEnable=%d;%d\n", i_val,i_val);
+	fprintf(fp, "WNMEnable=%d;%d\n", i_val,i_val);	
 	
 	i_val = nvram_wlan_get_int(is_aband, "HT_80211R");
 	#if defined (BOARD_MT7915_DBDC)
-			if (is_aband)
-			{fprintf(fp, "FtSupport=%d;%d\n",i_val);}
-			else
-			{fprintf(fp, "FtSupport=%d;%d\n",i_val);}
-		fprintf(fp, "FtOtd=0;0\n");
-		fprintf(fp, "FtRic=1;1\n");
+		fprintf(fp, "FtOtd=%d;%d\n", i_val,i_val);
+		fprintf(fp, "FtRic=%d;%d\n", i_val,i_val);
+		fprintf(fp, "FtSupport=%d\n", i_val);
+	
 	#else 
 		fprintf(fp, "FtSupport=%d\n",i_val);
-		fprintf(fp, "FtOtd=0\n");
-		fprintf(fp, "FtRic=1\n");
+		fprintf(fp, "FtOtd=%d\n", i_val);
+		fprintf(fp, "FtRic=%d\n", i_val);
 	#endif
 
 	//HT_GI
