@@ -121,8 +121,7 @@ void RRM_ReadParametersFromFile(
 			LONG Enable;
 
 			Enable = os_str_tol(macptr, 0, 10);
-			pAd->ApCfg.MBSSID[loop].wdev.RrmCfg.bDot11kRRMEnable =
-				(Enable > 0) ? TRUE : FALSE;
+			pAd->ApCfg.MBSSID[loop].wdev.RrmCfg.bDot11kRRMEnable = TRUE;
 			pAd->ApCfg.MBSSID[loop].wdev.RrmCfg.bDot11kRRMEnableSet = TRUE;
 			MTWF_LOG(DBG_CAT_PROTO, CATPROTO_RRM, DBG_LVL_TRACE, ("%s::(bDot11kRRMEnable[%d]=%d)\n",
 					 __func__, loop,
