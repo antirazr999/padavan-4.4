@@ -2522,15 +2522,14 @@ void WNM_ReadParametersFromFile(
 					macptr = rstrtok(NULL, ";"), loop++) {
 			LONG Enable;
 			Enable = simple_strtol(macptr, 0, 10);
-			pAd->ApCfg.MBSSID[PF_TO_BSS_IDX(pAd, loop)].WNMCtrl.WNMBTMEnable =
-				(Enable > 0) ? TRUE : FALSE;
+			pAd->ApCfg.MBSSID[PF_TO_BSS_IDX(pAd, loop)].WNMCtrl.WNMBTMEnable = TRUE;
 			MTWF_LOG(DBG_CAT_PROTO, CATPROTO_RRM, DBG_LVL_TRACE, ("%s::(bDot11vWNMEnable[%d]=%d)\n",
 						__FUNCTION__, loop,
 						pAd->ApCfg.MBSSID[PF_TO_BSS_IDX(pAd, loop)].WNMCtrl.WNMBTMEnable));
 		}
 	} else {
 		for (loop = 0; loop < MAX_MBSSID_NUM(pAd); loop++)
-			pAd->ApCfg.MBSSID[PF_TO_BSS_IDX(pAd, loop)].WNMCtrl.WNMBTMEnable = FALSE;
+			pAd->ApCfg.MBSSID[PF_TO_BSS_IDX(pAd, loop)].WNMCtrl.WNMBTMEnable = TRUE;
 	}
 	return;
 }
