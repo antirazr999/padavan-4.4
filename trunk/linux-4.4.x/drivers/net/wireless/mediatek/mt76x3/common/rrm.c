@@ -134,7 +134,7 @@ void RRM_ReadParametersFromFile(
 	else 
 	{
 		for (loop = 0; loop < MAX_MBSSID_NUM(pAd); loop++)
-			pAd->ApCfg.MBSSID[loop].RrmCfg.bDot11kRRMEnable = FALSE;
+			pAd->ApCfg.MBSSID[loop].RrmCfg.bDot11kRRMEnable = TRUE;
 	}
 
 	/* Regulatory Class */
