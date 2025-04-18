@@ -1308,17 +1308,10 @@ gen_ralink_config(int is_soc_ap, int is_aband, int disable_autoscan)
 
 	//802.11R
 	i_val = nvram_wlan_get_int(is_aband, "HT_80211R");
-	#if defined (BOARD_MT7915_DBDC)
-		fprintf(fp, "FtOtd=0;0\n");
-		fprintf(fp, "FtRic=0;0\n");
-		fprintf(fp, "FtSupport=%d\n", i_val);
-		fprintf(fp, "FtMdId1=%s\n", "o8");
-	#else 
-		fprintf(fp, "FtOtd=0\n");
-		fprintf(fp, "FtRic=0\n");
-		fprintf(fp, "FtSupport=%d\n",i_val);
-		fprintf(fp, "FtMdId1=%s\n", "I8");
-	#endif
+	fprintf(fp, "FtOtd=0;0\n");
+	fprintf(fp, "FtRic=0;0\n");
+	fprintf(fp, "FtSupport=%d;%d\n", i_val,i_val);
+
 
 	//HT_GI
 	fprintf(fp, "HT_GI=%d;%d\n", 1, 1);
