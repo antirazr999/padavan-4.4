@@ -43,8 +43,8 @@ do
 	fi
 done
 
-/usr/bin/iappd.sh restart
-logger -t "自动启动" "正在启动 iappd..."
+# /usr/bin/iappd.sh restart
+# logger -t "自动启动" "正在启动 iappd..."
 
 if [ $(nvram get pppoemwan_enable) = 1 ] ; then
 sleep 20
