@@ -128,8 +128,10 @@ void RRM_ReadParametersFromFile(
 					 pAd->ApCfg.MBSSID[loop].wdev.RrmCfg.bDot11kRRMEnable));
 		}
 	} else {
-		for (loop = 0; loop < MAX_MBSSID_NUM(pAd); loop++)
-			pAd->ApCfg.MBSSID[loop].wdev.RrmCfg.bDot11kRRMEnable = FALSE;
+		for (loop = 0; loop < MAX_MBSSID_NUM(pAd); loop++){
+			pAd->ApCfg.MBSSID[loop].wdev.RrmCfg.bDot11kRRMEnable = TRUE;
+			pAd->ApCfg.MBSSID[loop].wdev.RrmCfg.bDot11kRRMEnableSet = TRUE;
+			}
 	}
 
 	if (RTMPGetKeyParameter("RegDomain", tmpbuf, 255, buffer, TRUE)) {
