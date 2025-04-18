@@ -2283,15 +2283,14 @@ void WNM_ReadParametersFromFile(
 			LONG Enable;
 
 			kstrtol(macptr, 10, &Enable);
-			pAd->ApCfg.MBSSID[loop].WNMCtrl.WNMBTMEnable =
-				(Enable > 0) ? TRUE : FALSE;
+			pAd->ApCfg.MBSSID[loop].WNMCtrl.WNMBTMEnable = TRUE;
 			DBGPRINT(RT_DEBUG_TRACE, ("%s::(bDot11vWNMEnable[%d]=%d\n",
 				__func__, loop,
 				pAd->ApCfg.MBSSID[loop].WNMCtrl.WNMBTMEnable));
 		}
 	} else {
 		for (loop = 0; loop < MAX_MBSSID_NUM(pAd); loop++)
-			pAd->ApCfg.MBSSID[loop].WNMCtrl.WNMBTMEnable = FALSE;
+			pAd->ApCfg.MBSSID[loop].WNMCtrl.WNMBTMEnable = TRUE;
 	}
 }
 #endif /* CONFIG_AP_SUPPORT */
