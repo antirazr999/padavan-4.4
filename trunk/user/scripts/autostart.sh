@@ -6,6 +6,12 @@
 
 ulimit -n 51200
 
+sed -i "/^FtR0khId1/d; \$aFtR0khId1=$(cat /sys/class/net/rai0/address | tr -d ':')" /etc/Wireless/iNIC/iNIC_ap.dat
+sed -i '/^FtMdId1/d; $a\FtMdId1=bb' /etc/Wireless/iNIC/iNIC_ap.dat
+logger -t "更新KVR配置"
+sed -i "/^FtR0khId1/d; \$aFtR0khId1=$(cat /sys/class/net/ra0/address | tr -d ':')" /etc/Wireless/RT2860/RT2860AP.dat
+sed -i '/^FtMdId1/d; $a\FtMdId1=aa' /etc/Wireless/RT2860/RT2860AP.dat  
+	
 mkdir -p /tmp/dnsmasq.dom
 logger -t "防止 DNSmasq 启动失败，创建/tmp/dnsmasq.dom/"
 
