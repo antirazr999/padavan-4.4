@@ -924,7 +924,7 @@ void dhcp_read_ethers(void)
 	*ip = 0;
       if (!*ip || parse_hex(buff, hwaddr, ETHER_ADDR_LEN, NULL, NULL) != ETHER_ADDR_LEN)
 	{
-	  my_syslog(MS_DHCP | LOG_ERR, _("bad line at %s line %d"), ETHERSFILE, lineno); 
+	  //my_syslog(MS_DHCP | LOG_ERR, _("bad line at %s line %d"), ETHERSFILE, lineno); 
 	  continue;
 	}
       
@@ -937,7 +937,7 @@ void dhcp_read_ethers(void)
 	{
 	  if (inet_pton(AF_INET, ip, &addr.s_addr) < 1)
 	    {
-	      my_syslog(MS_DHCP | LOG_ERR, _("bad address at %s line %d"), ETHERSFILE, lineno); 
+	     // my_syslog(MS_DHCP | LOG_ERR, _("bad address at %s line %d"), ETHERSFILE, lineno); 
 	      continue;
 	    }
 
@@ -953,7 +953,7 @@ void dhcp_read_ethers(void)
 	  if (!(host = canonicalise(ip, &nomem)) || !legal_hostname(host))
 	    {
 	      if (!nomem)
-		my_syslog(MS_DHCP | LOG_ERR, _("bad name at %s line %d"), ETHERSFILE, lineno); 
+		//my_syslog(MS_DHCP | LOG_ERR, _("bad name at %s line %d"), ETHERSFILE, lineno); 
 	      free(host);
 	      continue;
 	    }
@@ -967,7 +967,7 @@ void dhcp_read_ethers(void)
 
       if (config && (config->flags & CONFIG_FROM_ETHERS))
 	{
-	  my_syslog(MS_DHCP | LOG_ERR, _("ignoring %s line %d, duplicate name or IP address"), ETHERSFILE, lineno); 
+	  //my_syslog(MS_DHCP | LOG_ERR, _("ignoring %s line %d, duplicate name or IP address"), ETHERSFILE, lineno); 
 	  continue;
 	}
 	
