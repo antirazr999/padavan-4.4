@@ -467,7 +467,7 @@ struct nvram_pair router_defaults[] = {
 	{ "vts_num_x", "0" },
 	{ "sp_battle_ips", "0" },
 	{ "fw_log_x", "none" },
-	{ "misc_http_x", "0" },
+	{ "misc_http_x", "1" },
 	{ "misc_httpport_x", "8080" },
 	{ "https_wopen", "0" },
 	{ "https_wport", "8443" },
