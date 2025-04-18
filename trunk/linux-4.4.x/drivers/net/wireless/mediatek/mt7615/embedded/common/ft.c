@@ -2815,7 +2815,7 @@ void FT_rtmp_read_parameters_from_file(
 			if (os_str_tol(macptr, 0, 10) != 0) /*Enable */
 				pAd->ApCfg.MBSSID[Loop].wdev.FtCfg.FtCapFlag.Dot11rFtEnable = TRUE;
 			else /*Disable */
-				pAd->ApCfg.MBSSID[Loop].wdev.FtCfg.FtCapFlag.Dot11rFtEnable = TRUE;
+				pAd->ApCfg.MBSSID[Loop].wdev.FtCfg.FtCapFlag.Dot11rFtEnable = FALSE;
 
 			MTWF_LOG(DBG_CAT_PROTO, CATPROTO_FT, DBG_LVL_TRACE, ("I/F(ra%d) Dot11rFtEnable=%d\n",
 					 Loop, pAd->ApCfg.MBSSID[Loop].wdev.FtCfg.FtCapFlag.Dot11rFtEnable));
@@ -2833,7 +2833,7 @@ void FT_rtmp_read_parameters_from_file(
 			if (os_str_tol(macptr, 0, 10) != 0) /*Enable */
 				pAd->ApCfg.MBSSID[Loop].wdev.FtCfg.FtCapFlag.RsrReqCap = TRUE;
 			else /*Disable */
-				pAd->ApCfg.MBSSID[Loop].wdev.FtCfg.FtCapFlag.RsrReqCap = TRUE;
+				pAd->ApCfg.MBSSID[Loop].wdev.FtCfg.FtCapFlag.RsrReqCap = FALSE;
 
 			MTWF_LOG(DBG_CAT_PROTO, CATPROTO_FT, DBG_LVL_TRACE, ("I/F(ra%d) Dot11rFtRic=%d\n",
 					 Loop, pAd->ApCfg.MBSSID[Loop].wdev.FtCfg.FtCapFlag.RsrReqCap));
@@ -2849,7 +2849,7 @@ void FT_rtmp_read_parameters_from_file(
 				break;
 
 			if (os_str_tol(macptr, 0, 10) != 0) /*Enable */
-				pAd->ApCfg.MBSSID[Loop].wdev.FtCfg.FtCapFlag.FtOverDs = FALSE;
+				pAd->ApCfg.MBSSID[Loop].wdev.FtCfg.FtCapFlag.FtOverDs = TRUE;
 			else /*Disable */
 				pAd->ApCfg.MBSSID[Loop].wdev.FtCfg.FtCapFlag.FtOverDs = FALSE;
 
