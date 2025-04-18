@@ -3840,8 +3840,8 @@ BOOLEAN MtSmacAsicSetDmaFqcr(
 
 	/* check filter resilt */
 	MAC_IO_READ32(pAd->hdev_ctrl, DMA_FQCR1, &temp);
-	MTWF_LOG(DBG_CAT_ALL, DBG_SUBCAT_ALL, DBG_LVL_OFF,
-			 ("flush result = %x\n", temp));
+	/* MTWF_LOG(DBG_CAT_ALL, DBG_SUBCAT_ALL, DBG_LVL_OFF,
+			 ("flush result = %x\n", temp)); */
 
 	if (temp == 0xffffff) {
 		flushResult = FALSE;
