@@ -925,6 +925,7 @@ void dhcp_read_ethers(void)
       if (!*ip || parse_hex(buff, hwaddr, ETHER_ADDR_LEN, NULL, NULL) != ETHER_ADDR_LEN)
 	{
 	  //my_syslog(MS_DHCP | LOG_ERR, _("bad line at %s line %d"), ETHERSFILE, lineno); 
+		;
 	  continue;
 	}
       
@@ -938,6 +939,7 @@ void dhcp_read_ethers(void)
 	  if (inet_pton(AF_INET, ip, &addr.s_addr) < 1)
 	    {
 	     // my_syslog(MS_DHCP | LOG_ERR, _("bad address at %s line %d"), ETHERSFILE, lineno); 
+		    ;
 	      continue;
 	    }
 
@@ -952,8 +954,10 @@ void dhcp_read_ethers(void)
 	  int nomem;
 	  if (!(host = canonicalise(ip, &nomem)) || !legal_hostname(host))
 	    {
-	      if (!nomem)
+	      if (!nomem) {
+		      ;
 		//my_syslog(MS_DHCP | LOG_ERR, _("bad name at %s line %d"), ETHERSFILE, lineno); 
+		       }
 	      free(host);
 	      continue;
 	    }
