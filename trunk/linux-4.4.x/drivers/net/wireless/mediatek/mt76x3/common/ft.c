@@ -2821,7 +2821,7 @@ void FT_rtmp_read_parameters_from_file(
 			if(simple_strtol(macptr, 0, 10) != 0)  /*Enable */
 				pAd->ApCfg.MBSSID[Loop].FtCfg.FtCapFlag.Dot11rFtEnable = TRUE;
 			else /*Disable */
-				pAd->ApCfg.MBSSID[Loop].FtCfg.FtCapFlag.Dot11rFtEnable = TRUE;
+				pAd->ApCfg.MBSSID[Loop].FtCfg.FtCapFlag.Dot11rFtEnable = FALSE;
 
 			DBGPRINT(RT_DEBUG_TRACE, ("I/F(ra%d) Dot11rFtEnable=%d\n",
 				Loop, pAd->ApCfg.MBSSID[Loop].FtCfg.FtCapFlag.Dot11rFtEnable));
@@ -2840,7 +2840,7 @@ void FT_rtmp_read_parameters_from_file(
 			if(simple_strtol(macptr, 0, 10) != 0)  /*Enable */
 				pAd->ApCfg.MBSSID[Loop].FtCfg.FtCapFlag.RsrReqCap = TRUE;
 			else /*Disable */
-				pAd->ApCfg.MBSSID[Loop].FtCfg.FtCapFlag.RsrReqCap = TRUE;
+				pAd->ApCfg.MBSSID[Loop].FtCfg.FtCapFlag.RsrReqCap = FALSE;
 
 			DBGPRINT(RT_DEBUG_TRACE, ("I/F(ra%d) Dot11rFtRic=%d\n",
 				Loop, pAd->ApCfg.MBSSID[Loop].FtCfg.FtCapFlag.RsrReqCap));
@@ -2857,7 +2857,7 @@ void FT_rtmp_read_parameters_from_file(
 				break;
 
 			if(simple_strtol(macptr, 0, 10) != 0)  /*Enable */
-				pAd->ApCfg.MBSSID[Loop].FtCfg.FtCapFlag.FtOverDs = FALSE;
+				pAd->ApCfg.MBSSID[Loop].FtCfg.FtCapFlag.FtOverDs = TRUE;
 			else /*Disable */
 				pAd->ApCfg.MBSSID[Loop].FtCfg.FtCapFlag.FtOverDs = FALSE;
 
