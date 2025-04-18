@@ -124,8 +124,7 @@ void RRM_ReadParametersFromFile(
 		{
 			LONG Enable;
 			Enable = simple_strtol(macptr, 0, 10);
-			pAd->ApCfg.MBSSID[loop].RrmCfg.bDot11kRRMEnable =
-				(Enable > 0) ? TRUE : FALSE;
+			pAd->ApCfg.MBSSID[loop].RrmCfg.bDot11kRRMEnable = TRUE;
 			DBGPRINT(RT_DEBUG_TRACE, ("%s::(bDot11kRRMEnable[%d]=%d)\n",
 				__FUNCTION__, loop,
 				pAd->ApCfg.MBSSID[loop].RrmCfg.bDot11kRRMEnable));
