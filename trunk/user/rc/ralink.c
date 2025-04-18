@@ -1301,21 +1301,23 @@ gen_ralink_config(int is_soc_ap, int is_aband, int disable_autoscan)
 	if (i_val < 1 || i_val > 256) i_val = 256;
 	fprintf(fp, "HT_BAWinSize=%d\n", i_val);
 	
-	//802.11KVR
+	//802.11KV
 	i_val = nvram_wlan_get_int(is_aband, "HT_80211KV");
 	fprintf(fp, "RRMEnable=%d;%d\n", i_val,i_val);
 	fprintf(fp, "WNMEnable=%d;%d\n", i_val,i_val);	
-	
+
+	//802.11R
 	i_val = nvram_wlan_get_int(is_aband, "HT_80211R");
 	#if defined (BOARD_MT7915_DBDC)
-		fprintf(fp, "FtOtd=%d;%d\n", i_val,i_val);
-		fprintf(fp, "FtRic=%d;%d\n", i_val,i_val);
+		fprintf(fp, "FtOtd=0;0\n");
+		fprintf(fp, "FtRic=0;0\n");
 		fprintf(fp, "FtSupport=%d\n", i_val);
-	
+		fprintf(fp, "FtMdId1=%s\n", "o8");
 	#else 
+		fprintf(fp, "FtOtd=0\n");
+		fprintf(fp, "FtRic=0\n");
 		fprintf(fp, "FtSupport=%d\n",i_val);
-		fprintf(fp, "FtOtd=%d\n", i_val);
-		fprintf(fp, "FtRic=%d\n", i_val);
+		fprintf(fp, "FtMdId1=%s\n", "I8");
 	#endif
 
 	//HT_GI
