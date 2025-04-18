@@ -52,9 +52,13 @@ fi
 
 if [ $(nvram get sqm_enable) = 1 ] ; then
 sleep 30
+
 logger -t "自动启动" "正在启动 SQM QOS..."
 /usr/lib/sqm/run.sh
 fi
+
+logger -t "自动启动" "重置 miniupnp..."
+killall miniupnpd && miniupnpd -f /etc/miniupnpd.conf
 
 if [ $(nvram get sdns_enable) = 1 ] ; then
    if [ -f "$smartdns_conf" ] ; then
@@ -113,6 +117,3 @@ if [ $(nvram get frpc_enable) = 1 ] ; then
 logger -t "自动启动" "正在启动frp client..."
 /usr/bin/frp.sh start
 fi
-
-logger -t "自动启动" "正在启动 miniupnp..."
-killall miniupnpd && miniupnpd -f /etc/miniupnpd.conf
