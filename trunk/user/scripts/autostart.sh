@@ -7,7 +7,6 @@
 ulimit -n 51200
 
 mkdir -p /tmp/dnsmasq.dom
-logger -t "自动启动" "创建dnsmasq.dom..."
 
 # ap relay monitor [simonchen]
 if [ ! -x /etc/storage/sh_ezscript.sh ]; then
@@ -57,7 +56,6 @@ logger -t "自动启动" "正在启动 SQM QOS..."
 /usr/lib/sqm/run.sh
 fi
 
-logger -t "自动启动" "重置 miniupnp..."
 killall miniupnpd && miniupnpd -f /etc/miniupnpd.conf
 
 if [ $(nvram get sdns_enable) = 1 ] ; then
