@@ -300,20 +300,22 @@ endif
 # WNM
 ifeq ($(CONFIG_MT7603E_WNM_SUPPORT),y)
     EXTRA_CFLAGS += -DCONFIG_DOT11V_WNM 
+    spec_objs += $(RT_WIFI_DIR)/common/wnm.o\
+                    $(RT_WIFI_DIR)/common/gas.o\
+                    $(RT_WIFI_DIR)/common/hotspot.o\
+                    $(RT_WIFI_DIR)/wapp/wapp.o
 
-    spec_objs += $(RT_WIFI_DIR)/common/wnm.o
 endif
 
 ifeq ($(CONFIG_MT7603E_HOTSPOT),y)
 	EXTRA_CFLAGS += -DDOT11U_INTERWORKING -DCONFIG_DOT11V_WNM -DCONFIG_HOTSPOT -DWAPP_SUPPORT
-
 	spec_objs += $(RT_WIFI_DIR)/common/wnm.o\
 				$(RT_WIFI_DIR)/common/gas.o\
 				$(RT_WIFI_DIR)/common/hotspot.o\
 				$(RT_WIFI_DIR)/wapp/wapp.o
-ifeq ($(CONFIG_MT7603E_PASSPOINT_R2),y)
-ccflags-y += -DCONFIG_HOTSPOT_R2
-endif
+	ifeq ($(CONFIG_MT7603E_PASSPOINT_R2),y)
+	ccflags-y += -DCONFIG_HOTSPOT_R2
+	endif
 endif
 
 ifeq ($(CONFIG_MT7603E_SNIFFER_SUPPORT),y)
