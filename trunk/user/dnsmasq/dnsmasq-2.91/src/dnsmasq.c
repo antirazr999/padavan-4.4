@@ -19,6 +19,7 @@
 
 /* dnsmasq.h has to be included first as it sources config.h */
 #include "dnsmasq.h"
+#define VERSION "2.91"
 
 #if defined(HAVE_IDN) || defined(HAVE_LIBIDN2) || defined(LOCALEDIR)
 #include <locale.h>
