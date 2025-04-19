@@ -584,7 +584,7 @@ struct nvram_pair router_defaults[] = {
 	{ "ss_cgroups", "1" },
 	{ "ss_cgoups_cpu_s", "512" },
 	//{ "ss_cgoups_mem_s", "96M" },
-	#if (BOARD_RAM_SIZE > 128)
+	#if (BOARD_RAM_SIZE > 192)
 	{ "ss_cgoups_mem_s",  "96M" },
 	#else
 	{ "ss_cgoups_mem_s", "25M" },
