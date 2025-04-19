@@ -583,7 +583,12 @@ struct nvram_pair router_defaults[] = {
 	{ "tunnel_forward", "8.8.4.4#53" },
 	{ "ss_cgroups", "1" },
 	{ "ss_cgoups_cpu_s", "512" },
+	//{ "ss_cgoups_mem_s", "96M" },
+	#if (BOARD_RAM_SIZE > 128)
+	{ "ss_cgoups_mem_s",  "96M" },
+	#else
 	{ "ss_cgoups_mem_s", "25M" },
+	#endif
 	{ "ss_watchcat", "1" },
 	{ "ss_turn", "0" },
 	{ "ss_turn_s", "600" },
@@ -592,9 +597,9 @@ struct nvram_pair router_defaults[] = {
 	{ "socks5_port", "1088" },
 	{ "ss_adblock", "0" },
 	{ "ss_adblock_url", "https://anti-ad.net/anti-ad-for-dnsmasq.conf"},
-	{ "ss_update_chnroute", "1" },
+	{ "ss_update_chnroute", "q" },
 	{ "ss_chnroute_url", "https://ispip.clang.cn/all_cn.txt"},
-	{ "ss_update_gfwlist", "1" },
+	{ "ss_update_gfwlist", "q" },
 	{ "ss_gfwlist_url", "https://cdn.jsdelivr.net/gh/YW5vbnltb3Vz/domain-list-community@release/gfwlist.txt"},
 	{ "ss_type", "0" },
 	{ "backup_server", "nil" },
@@ -854,11 +859,11 @@ struct nvram_pair router_defaults[] = {
 
 #if defined(APP_SQM)
 	/*SQM QoS*/
-	{ "sqm_enable", "0" },
+	{ "sqm_enable", "1" },
 	{ "sqm_flag"  , "3" },
 	{ "sqm_active", "ra0" },
-	{ "sqm_down_speed", "0" },
-	{ "sqm_up_speed", "0" },
+	{ "sqm_down_speed", "1070080" },
+	{ "sqm_up_speed", "1070080" },
 	{ "sqm_debug_log", "0" },
 	{ "sqm_log_level", "5" },
 	{ "sqm_qdisc", "fq_codel" },
@@ -877,7 +882,7 @@ struct nvram_pair router_defaults[] = {
 	{ "dhcp_dnsv6_x", "" },
 	{ "dhcp_dnsv61_x", "" },
 	{ "dhcp_wins_x", "" },
-	{ "redirect_all_dns", "0" },		/* Redirect all clients DNS requests */
+	{ "redirect_all_dns", "1" },		/* Redirect all clients DNS requests */
 	{ "dhcp_filter_aaaa", "0" },
 	{ "dhcp_all_servers", "1" },
 	{ "dhcp_strict_order", "0" },
