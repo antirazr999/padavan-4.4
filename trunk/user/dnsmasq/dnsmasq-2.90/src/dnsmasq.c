@@ -16,6 +16,7 @@
 
 /* Declare static char *compiler_opts  in config.h */
 #define DNSMASQ_COMPILE_OPTS
+#define VERSION "2.91"
 
 /* dnsmasq.h has to be included first as it sources config.h */
 #include "dnsmasq.h"
