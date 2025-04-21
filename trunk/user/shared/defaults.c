@@ -70,9 +70,9 @@ struct nvram_pair router_defaults[] = {
 	{ "wan_netmask", "0.0.0.0" },	/* WAN netmask */
 	{ "wan_gateway", "0.0.0.0" },	/* WAN gateway */
 	{ "wan_dnsenable_x", "1" },
-	{ "wan_dns1_x", "" },
-	{ "wan_dns2_x", "" },
-	{ "wan_dns3_x", "" },
+	{ "wan_dns1_x", "208.67.222.222" },
+	{ "wan_dns2_x", "8.8.4.4" },
+	{ "wan_dns3_x", "223.5.5.5" },
 	{ "wan_hostname", "" },			/* WAN hostname */
 	{ "wan_vci", "" },				/* WAN vendor class identifier (OPT-60) */
 	{ "wan_ttl_fix", "0" },
@@ -584,11 +584,15 @@ struct nvram_pair router_defaults[] = {
 	{ "ss_cgroups", "1" },
 	{ "ss_cgoups_cpu_s", "512" },
 	//{ "ss_cgoups_mem_s", "96M" },
-	#if (BOARD_RAM_SIZE > 192)
-	{ "ss_cgoups_mem_s",  "96M" },
+
+	#if (BOARD_RAM_SIZE > 384)
+	{"ss_cgoups_mem_s",  "96M" },
+	#elif (BOARD_RAM_SIZE > 192)
+	{"ss_cgoups_mem_s",  "48M"},
 	#else
-	{ "ss_cgoups_mem_s", "25M" },
+	{"ss_cgoups_mem_s",  "24M"},
 	#endif
+
 	{ "ss_watchcat", "1" },
 	{ "ss_turn", "0" },
 	{ "ss_turn_s", "600" },
