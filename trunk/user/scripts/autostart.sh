@@ -67,13 +67,14 @@ if [ $(nvram get sdns_enable) = 1 ] ; then
        sed -i '/port=0/d' "$dnsmasq_Conf"
        rm  -f "$smartdns_Ini"
    fi
-logger -t "自动启动" "正在启动 SmartDNS..."
-/usr/bin/smartdns.sh start
-fi
 
 if [ $(nvram get ss_enable) = 1 ] ; then
 logger -t "自动启动" "正在启动科学上网..."
 /usr/bin/shadowsocks.sh start
+fi
+
+logger -t "自动启动" "正在启动 SmartDNS..."
+/usr/bin/smartdns.sh start
 fi
 
 if [ $(nvram get adbyby_enable) = 1 ] ; then
